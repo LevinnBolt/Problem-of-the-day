@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <center><h1>11-03-2025 PROBLEM OF THE DAY</h1></center>
+        <h2>PROBLEM-1</h2>
+        <pre>
+<code>
+SELECT UL.LISTENING_ID, UL.USER_ID, SPH.PLAY_COUNT 
+FROM USER_LISTENING UL  
+JOIN SONG_PLAY_HISTORY SPH 
+ON UL.SONG_ID = SPH.SONG_ID;
+
+SELECT UL.SONG_ID, SUM(UL.DURATION) AS TOTAL_DURATION 
+FROM USER_LISTENING UL 
+JOIN SONG_PLAY_HISTORY SPH 
+ON UL.SONG_ID = SPH.SONG_ID 
+GROUP BY UL.SONG_ID; 
+
+SELECT UL.SONG_ID, SUM(SPH.PLAY_COUNT) AS TOTAL_PLAY_COUNT 
+FROM USER_LISTENING UL 
+JOIN SONG_PLAY_HISTORY SPH 
+ON UL.SONG_ID = SPH.SONG_ID 
+GROUP BY UL.SONG_ID;
+</code>
+        </pre>
+    </div>
+</body>
+</html>
